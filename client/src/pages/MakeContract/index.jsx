@@ -81,7 +81,16 @@ export default function MakeContract(props){
             <Button variant="contained" color="secondary" size="medium" onClick={()=>createContractSignature(counter)}>Add Signature Field</Button>
             <br/>
             <br/>
-            <Button variant='contained' type="submit" color="primary" onClick={()=>console.log(title, data, initialDate, finalDate, signatures)} fullWidth>Create</Button>
+            <Button variant='contained' type="submit" color="primary" onClick={()=>{
+                const d = {
+                    name: title,
+                    body: data,
+                    initialDate: initialDate,
+                    finalDate: finalDate,
+                    signatures: signatures,
+                }
+                console.log(d);
+            }} fullWidth>Create</Button>
         </>
     );
-}
+}   
